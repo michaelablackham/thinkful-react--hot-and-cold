@@ -1,0 +1,13 @@
+.game-container {
+  max-width: 300px;
+  margin: 0 auto 40px;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  background-color: #FFF;
+}
+
+.game-container > * {
+  padding: 20px 40px;
+  margin: 0;
+}

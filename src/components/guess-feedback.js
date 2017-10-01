@@ -1,10 +1,10 @@
 //ALWAYS IMPORT REACT IN ALL COMPONENTS
 import React from 'react';
 
-export default function GuesList(props){
+export default function Feedback(props){
   return (
-    <ul>
-    {props.guesses}
-    </ul>
+    <h2>
+      {props.feedback}
+    </h2>
   );
 }
