@@ -69,8 +69,10 @@ export default class Game extends React.Component {
         <section className={`game-container game-container-${this.state.correct}`}>
           <Feedback feedback={this.state.feedback}/>
           <Form submitGuess={(guess) => this.guess(guess)} />
-          <GuessCount count={this.state.guesses.length+1}/>
-          <GuessList guesses={this.state.guesses}/>
+          <section>
+            <GuessCount count={this.state.guesses.length+1}/>
+            <GuessList guesses={this.state.guesses} isCorrect={this.state.correct}/>
+          </section>
         </section>
         <Footer newGame={this.newGame} />
       </div>
