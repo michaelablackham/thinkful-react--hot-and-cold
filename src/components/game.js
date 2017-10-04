@@ -27,6 +27,15 @@ export default class Game extends React.Component {
     //    correctAnswer: Math.floor(Math.random() * 100) + 1,
     //  });
 
+    guess(guess) {
+      if  (guess == this.state.correctAnswer) {
+        console.log("GOOD JOB" + this.state.correctAnswer)
+      }
+      else {
+        console.log("loser" + this.state.correctAnswer)
+      }
+    }
+
   //  const feedback = {
   //    initial: "Guess a number!",
   //    correct: "Good job! You guessed it!",
@@ -53,12 +62,12 @@ export default class Game extends React.Component {
     return (
       <div>
         <Header/>
-        <div class="game-container">
+        <section className="game-container">
           <Feedback feedback={this.state.feedback}/>
           <Form submitGuess={(guess) => this.guess(guess)} />
           <GuessCount count={this.state.guesses.length+1}/>
           <GuessList guesses={this.state.guesses}/>
-        </div>
+        </section>
         <Footer/>
       </div>
     );
