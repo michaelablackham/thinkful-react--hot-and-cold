@@ -5,8 +5,12 @@ import './footer.css';
 
 export default class Footer extends React.Component {
   newGame(event) {
+    console.log('newGame called');
     event.preventDefault();
+
+    console.log('this.props.newGame contents:', this.props.newGame);
     if (this.props.newGame) {
+      // console.log('this.props.newGame contents:', this.props.newGame);
       this.props.newGame();
     }
   }

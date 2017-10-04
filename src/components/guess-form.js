@@ -21,7 +21,7 @@ export default class GuessForm extends React.Component {
         <input
           id="guess"
           type="number"
-          placeholder="Enter your guess"
+          placeholder="Number"
           min="0"
           max="20"
           required
