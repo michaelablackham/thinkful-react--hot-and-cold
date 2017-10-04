@@ -17,53 +17,45 @@ export default class Game extends React.Component {
       guesses: [],
       feedback: "Guess a number",
       correctAnswer: Math.floor(Math.random() * 20) + 1,
+      correct: null,
     };
   }
 
-    // newGame() {
-    //  this.setState({
-    //    guesses: [],
-    //    feedback: 'Make your guess!',
-    //    correctAnswer: Math.floor(Math.random() * 100) + 1,
-    //  });
+  newGame() {
+   this.setState({
+     guesses: [],
+     feedback: 'Make your guess!',
+     correctAnswer: Math.floor(Math.random() * 100) + 1,
+     correct: null
+    });
+  };
 
-    guess(guess) {
-      if  (guess == this.state.correctAnswer) {
-        console.log("GOOD JOB" + this.state.correctAnswer)
-      }
-      else {
-        console.log("loser" + this.state.correctAnswer)
-      }
+  guess(guess) {
+    let feedback;
+    let correct;
+    if (guess != this.state.correctAnswer) {
+      console.log("loser" + this.state.correctAnswer)
+      feedback = "WRONG";
+      correct = false;
+    }
+    else {
+      correct = true;
+      feedback = "Good job! You guessed it!";
     }
 
-  //  const feedback = {
-  //    initial: "Guess a number!",
-  //    correct: "Good job! You guessed it!",
-  //    wrong: [
-  //      "Guess again",
-  //      "NOPE",
-  //      "Uhhhh I don\'t think so",
-  //      "Come on!",
-  //      "Try again",
-  //      "Pick another number",
-  //      "You stink at this",
-  //      "Clearly you aren\'t a mind reader"
-  //    ]
-  //  }
-
-    //CHOOSE RANDOM WRONG ANSWER FEEDBACK
-    //  ChooseFeedback(feedback) {
-    //    this.setState({
-    //       feedback: this.feedback.wrong[Math.floor(Math.random() * 8) + 1]
-    //     });
-    //  }
+    this.setState({
+      correct,
+      feedback,
+      guesses: [...this.state.guesses, guess]
+    });
+  };
 
   render() {
     return (
       <div>
         <Header/>
         <section className="game-container">
-          <Feedback feedback={this.state.feedback}/>
+          <Feedback className={this.state.correct} feedback={this.state.feedback}/>
           <Form submitGuess={(guess) => this.guess(guess)} />
           <GuessCount count={this.state.guesses.length+1}/>
           <GuessList guesses={this.state.guesses}/>

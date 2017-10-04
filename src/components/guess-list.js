@@ -4,7 +4,7 @@ import React from 'react';
 export default function GuesList(props){
   return (
     <ul>
-    {props.guesses}
+    <li>{props.guesses}</li>
     </ul>
   );
 }
