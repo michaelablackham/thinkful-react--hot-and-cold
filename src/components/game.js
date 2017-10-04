@@ -60,7 +60,7 @@ export default class Game extends React.Component {
           <GuessCount count={this.state.guesses.length+1}/>
           <GuessList guesses={this.state.guesses}/>
         </section>
-        <Footer/>
+        <Footer newGame={this.props.newGame} />
       </div>
     );
   }
