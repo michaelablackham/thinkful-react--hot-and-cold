@@ -5,7 +5,7 @@ import './guess-list.css';
 
 export default function GuesList(props){
   const guesses = props.guesses.map((guess, index) => (
-     <li className={`guess-${props.isCorrect}`}>
+     <li key={index} className={`guess-${props.isCorrect}`}>
          {guess}
      </li>
    ));

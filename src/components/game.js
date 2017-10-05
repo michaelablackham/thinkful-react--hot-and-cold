@@ -26,7 +26,6 @@ export default class Game extends React.Component {
   }
 
   newGame() {
-    console.log('this:', this);
     this.setState(INITIAL_STATE);
   };
 
