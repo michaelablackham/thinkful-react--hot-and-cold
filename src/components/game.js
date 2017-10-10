@@ -70,7 +70,7 @@ export default class Game extends React.Component {
           <Form submitGuess={(guess) => this.guess(guess)} />
           <section>
             <GuessCount count={this.state.guesses.length+1}/>
-            <GuessList guesses={this.state.guesses} isCorrect={this.state.correct}/>
+            <GuessList guesses={this.state.guesses} correctAnswer={this.state.correctAnswer}/>
           </section>
         </section>
         <Footer newGame={this.newGame} />
